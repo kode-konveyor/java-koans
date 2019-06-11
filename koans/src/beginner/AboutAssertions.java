@@ -1,48 +1,51 @@
 package beginner;
 
-import com.sandwich.koan.Koan;
+import org.junit.jupiter.api.Test;
 
-import static com.sandwich.koan.constant.KoanConstants.__;
-import static com.sandwich.util.Assert.*;
+import static tools.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
+
+import static tools.Constants.__;
+
 
 public class AboutAssertions {
 
-    @Koan
+    @Test
     public void assertBooleanTrue() {
         // there are two possibilities, true or false, what would it be here?
         assertTrue(__);
     }
 
-    @Koan
+    @Test
     public void assertBooleanFalse() {
         assertFalse(__);
     }
 
-    @Koan
+    @Test
     public void assertNullObject() {
         // reference to the object can be null, a magic keyword, null, which means
         // that there is nothing there
         assertNull(__);
     }
 
-    @Koan
+    @Test
     public void assertNullObjectReference() {
         Object someObject = __;
         assertNull(someObject);
     }
 
-    @Koan
+    @Test
     public void assertNotNullObject() {
         // but what when there should not be a null value?
         assertNotNull(null);
     }
 
-    @Koan
+    @Test
     public void assertEqualsUsingExpression() {
         assertTrue("Hello World!".equals(__));
     }
 
-    @Koan
+    @Test
     public void assertEqualsWithAFewExpressions() {
         assertEquals("Hello World!", __);
         assertEquals(1, __);
@@ -52,7 +55,7 @@ public class AboutAssertions {
         assertEquals(10 / 2, __);
     }
 
-    @Koan
+    @Test
     public void assertEqualsWithDescriptiveMessage() {
         // Generally, when using an assertXXX methods, expectation is on the
         // left and it is best practice to use a String for the first arg
@@ -60,11 +63,11 @@ public class AboutAssertions {
         assertEquals("The answer to 'life the universe and everything' should be 42", 42, __);
     }
 
-    @Koan
+    @Test
     public void assertSameInstance() {
-        Integer original = new Integer(1);
+        Integer original = Integer.valueOf(1);
         Integer same = original;
-        Integer different = new Integer(1);
+        Integer different = Integer.valueOf(1);
         // These are both equal to the original...
         assertEquals(original, same);
         assertEquals(original, different);
@@ -72,11 +75,11 @@ public class AboutAssertions {
         assertSame(original, __);
     }
 
-    @Koan
+    @Test
     public void assertNotSameInstance() {
-        Integer original = new Integer(1);
+        Integer original = Integer.valueOf(1);
         Integer same = original;
-        Integer different = new Integer(1);
+        Integer different = Integer.valueOf(1);
         // These are both equal to the original...
         assertEquals(original, same);
         assertEquals(original, different);

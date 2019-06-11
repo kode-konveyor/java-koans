@@ -1,51 +1,51 @@
 package intermediate;
 
-import com.sandwich.koan.Koan;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.sandwich.koan.constant.KoanConstants.__;
-import static com.sandwich.util.Assert.assertEquals;
+import static tools.Constants.__;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AboutAutoboxing {
 
-    @Koan
+    @Test
     public void addPrimitivesToCollection() {
         List<Integer> list = new ArrayList<Integer>();
-        list.add(0, new Integer(42));
+        list.add(0, Integer.valueOf(42));
         assertEquals(list.get(0), __);
     }
 
-    @Koan
+    @Test
     public void addPrimitivesToCollectionWithAutoBoxing() {
         List<Integer> list = new ArrayList<Integer>();
         list.add(0, 42);
         assertEquals(list.get(0), __);
     }
 
-    @Koan
+    @Test
     public void migrateYourExistingCodeToAutoBoxingWithoutFear() {
         List<Integer> list = new ArrayList<Integer>();
-        list.add(0, new Integer(42));
+        list.add(0, Integer.valueOf(42));
         assertEquals(list.get(0), __);
 
         list.add(1, 84);
         assertEquals(list.get(1), __);
     }
 
-    @Koan
+    @Test
     public void allPrimitivesCanBeAutoboxed() {
         List<Double> doubleList = new ArrayList<Double>();
-        doubleList.add(0, new Double(42));
+        doubleList.add(0, Double.valueOf(42));
         assertEquals(doubleList.get(0), __);
 
         List<Long> longList = new ArrayList<Long>();
-        longList.add(0, new Long(42));
+        longList.add(0, Long.valueOf(42));
         assertEquals(longList.get(0), __);
 
         List<Character> characterList = new ArrayList<Character>();
-        characterList.add(0, new Character('z'));
+        characterList.add(0, Character.valueOf('z'));
         assertEquals(characterList.get(0), __);
     }
 

@@ -1,15 +1,15 @@
 package beginner;
 
-import com.sandwich.koan.Koan;
+import org.junit.jupiter.api.Test;
 
-import static com.sandwich.koan.constant.KoanConstants.__;
-import static com.sandwich.util.Assert.assertEquals;
-import static com.sandwich.util.Assert.fail;
+import static tools.Constants.__;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.fail;
 
 @SuppressWarnings("unused")
 public class AboutCasting {
 
-    @Koan
+    @Test
     public void longPlusInt() {
         int a = 6;
         long b = 10;
@@ -19,7 +19,7 @@ public class AboutCasting {
         assertEquals(c instanceof Long, __);
     }
 
-    @Koan
+    @Test
     public void forceIntTypecast() {
         long a = 2147483648L;
         // What happens if we force a long value into an int?
@@ -27,7 +27,7 @@ public class AboutCasting {
         assertEquals(b, __);
     }
 
-    @Koan
+    @Test
     public void implicitTypecast() {
         int a = 1;
         int b = Integer.MAX_VALUE;
@@ -57,7 +57,7 @@ public class AboutCasting {
         }
     }
 
-    @Koan
+    @Test
     public void upcastWithInheritance() {
         Child child = new Child();
         Parent parentReference = child; // Why isn't there an explicit cast?
@@ -67,7 +67,7 @@ public class AboutCasting {
         assertEquals(parentReference instanceof Grandparent, __);
     }
 
-    @Koan
+    @Test
     public void upcastAndPolymorphism() {
         Child child = new Child();
         Parent parentReference = child;
@@ -75,7 +75,7 @@ public class AboutCasting {
         assertEquals(parentReference.complain(), __);
     }
 
-    @Koan
+    @Test
     public void downcastWithInheritance() {
         Grandparent child = new Child();
         Parent parentReference = (Parent) child; // Why do we need an explicit cast here?
@@ -85,7 +85,7 @@ public class AboutCasting {
         assertEquals(childReference instanceof Grandparent, __);
     }
 
-    @Koan
+    @Test
     public void downcastAndPolymorphism() {
         Grandparent child = new Child();
         Parent parent = (Child) child;
@@ -94,7 +94,7 @@ public class AboutCasting {
         assertEquals(parent.complain(), __);
     }
 
-    @Koan
+    @Test
     public void classCasting() {
         try {
             Object o = new Object();
@@ -104,7 +104,7 @@ public class AboutCasting {
         }
     }
 
-    @Koan
+    @Test
     public void complicatedCast() {
         Grandparent parent = new Parent();
         // How can we access the parent's ability to "complain" - if the reference is held as a superclass?

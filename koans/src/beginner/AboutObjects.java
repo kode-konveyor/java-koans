@@ -1,22 +1,22 @@
 package beginner;
 
-import com.sandwich.koan.Koan;
+import org.junit.jupiter.api.Test;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.sandwich.koan.constant.KoanConstants.__;
-import static com.sandwich.util.Assert.assertEquals;
+import static tools.Constants.__;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AboutObjects {
 
-    @Koan
+    @Test
     public void newObjectInstancesCanBeCreatedDirectly() {
         assertEquals(new Object() instanceof Object, __);
     }
 
-    @Koan
+    @Test
     public void allClassesInheritFromObject() {
         class Foo {
         }
@@ -26,7 +26,7 @@ public class AboutObjects {
         assertEquals(ancestors[1], __);
     }
 
-    @Koan
+    @Test
     public void objectToString() {
         Object object = new Object();
         // TODO: Why is it best practice to ALWAYS override toString?
@@ -34,7 +34,7 @@ public class AboutObjects {
         assertEquals(expectedToString, __); // hint: object.toString()
     }
 
-    @Koan
+    @Test
     public void toStringConcatenates() {
         final String string = "ha";
         Object object = new Object() {
@@ -46,7 +46,7 @@ public class AboutObjects {
         assertEquals(string + object, __);
     }
 
-    @Koan
+    @Test
     public void toStringIsTestedForNullWhenInvokedImplicitly() {
         String string = "string";
         assertEquals(string + null, __);

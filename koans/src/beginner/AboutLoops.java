@@ -1,15 +1,15 @@
 package beginner;
 
 
-import com.sandwich.koan.Koan;
+import org.junit.jupiter.api.Test;
 
-import static com.sandwich.koan.constant.KoanConstants.__;
-import static com.sandwich.util.Assert.assertEquals;
+import static tools.Constants.__;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class AboutLoops {
 
-    @Koan
+    @Test
     public void basicForLoop1() {
         String s = "";
         for (int i = 0; i < 5; i++) {
@@ -18,7 +18,7 @@ public class AboutLoops {
         assertEquals(s, __);
     }
 
-    @Koan
+    @Test
     public void basicForLoop2() {
         String s = "";
         for (int i = -5; i < 1; i++) {
@@ -27,7 +27,7 @@ public class AboutLoops {
         assertEquals(s, __);
     }
 
-    @Koan
+    @Test
     public void basicForLoop3() {
         String s = "";
         for (int i = 5; i > 0; i--) {
@@ -36,7 +36,7 @@ public class AboutLoops {
         assertEquals(s, __);
     }
 
-    @Koan
+    @Test
     public void basicForLoop4() {
         String s = "";
         for (int i = 0; i < 11; i += 2) {
@@ -45,7 +45,7 @@ public class AboutLoops {
         assertEquals(s, __);
     }
 
-    @Koan
+    @Test
     public void basicForLoop5() {
         String s = "";
         for (int i = 1; i <= 16; i *= 2) {
@@ -54,7 +54,7 @@ public class AboutLoops {
         assertEquals(s, __);
     }
 
-    @Koan
+    @Test
     public void basicForLoopWithTwoVariables1() {
         String s = "";
         for (int i = 0, j = 10; i < 5 && j > 5; i++, j--) {
@@ -63,7 +63,7 @@ public class AboutLoops {
         assertEquals(s, __);
     }
 
-    @Koan
+    @Test
     public void nestedLoops() {
         String s = "";
         for (int i = 0; i < 3; i++) {
@@ -75,7 +75,7 @@ public class AboutLoops {
         assertEquals(s, __);
     }
 
-    @Koan
+    @Test
     public void extendedForLoop() {
         int[] is = {1, 2, 3, 4};
         String s = "";
@@ -85,7 +85,7 @@ public class AboutLoops {
         assertEquals(s, __);
     }
 
-    @Koan
+    @Test
     public void whileLoop() {
         int result = 0;
         while (result < 3) {
@@ -94,7 +94,7 @@ public class AboutLoops {
         assertEquals(result, __);
     }
 
-    @Koan
+    @Test
     public void doLoop() {
         int result = 0;
         do {
@@ -103,7 +103,7 @@ public class AboutLoops {
         assertEquals(result, __);
     }
 
-    @Koan
+    @Test
     public void extendedForLoopBreak() {
         String[] sa = {"Dog", "Cat", "Tiger"};
         int count = 0;
@@ -116,7 +116,7 @@ public class AboutLoops {
         assertEquals(count, __);
     }
 
-    @Koan
+    @Test
     public void extendedForLoopContinue() {
         String[] sa = {"Dog", "Cat", "Tiger"};
         int count = 0;
@@ -130,7 +130,7 @@ public class AboutLoops {
         assertEquals(count, __);
     }
 
-    @Koan
+    @Test
     public void forLoopContinueLabel() {
         int count = 0;
         outerLabel:
@@ -148,7 +148,7 @@ public class AboutLoops {
         assertEquals(count, __);
     }
 
-    @Koan
+    @Test
     public void forLoopBreakLabel() {
         int count = 0;
         outerLabel:

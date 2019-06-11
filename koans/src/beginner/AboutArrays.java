@@ -1,15 +1,15 @@
 package beginner;
 
-import com.sandwich.koan.Koan;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
-import static com.sandwich.koan.constant.KoanConstants.__;
-import static com.sandwich.util.Assert.assertEquals;
+import static tools.Constants.__;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AboutArrays {
 
-    @Koan
+    @Test
     public void arraysDoNotConsiderElementsWhenEvaluatingEquality() {
         // arrays utilize default object equality (A == {1} B == {1}, though A
         // and B contain the same thing, the container is not the same
@@ -17,13 +17,13 @@ public class AboutArrays {
         assertEquals(new int[]{1}.equals(new int[]{1}), __);
     }
 
-    @Koan
+    @Test
     public void cloneEqualityIsNotRespected() { //!
         int[] original = new int[]{1};
         assertEquals(original.equals(original.clone()), __);
     }
 
-    @Koan
+    @Test
     public void anArraysHashCodeMethodDoesNotConsiderElements() {
         int[] array0 = new int[]{0};
         int[] array1 = new int[]{0};
@@ -31,7 +31,7 @@ public class AboutArrays {
         // TODO: ponder the consequences when arrays are used in Hash Collection implementations.
     }
 
-    @Koan
+    @Test
     public void arraysHelperClassEqualsMethodConsidersElementsWhenDeterminingEquality() {
         int[] array0 = new int[]{0};
         int[] array1 = new int[]{0};
@@ -39,7 +39,7 @@ public class AboutArrays {
         // about equals in regard to arrays! (logical equality)
     }
 
-    @Koan
+    @Test
     public void arraysHelperClassHashCodeMethodConsidersElementsWhenDeterminingHashCode() {
         int[] array0 = new int[]{0};
         int[] array1 = new int[]{0};
@@ -47,28 +47,28 @@ public class AboutArrays {
         assertEquals(Integer.valueOf(Arrays.hashCode(array0)).equals(Arrays.hashCode(array1)), __);
     }
 
-    @Koan
+    @Test
     public void arraysAreMutable() {
         final boolean[] oneBoolean = new boolean[]{false};
         oneBoolean[0] = true;
         assertEquals(oneBoolean[0], __);
     }
 
-    @Koan
+    @Test
     public void arraysAreIndexedAtZero() {
         int[] integers = new int[]{1, 2};
         assertEquals(integers[0], __);
         assertEquals(integers[1], __);
     }
 
-    @Koan
+    @Test
     public void arrayIndexOutOfBounds() {
         int[] array = new int[]{1};
         @SuppressWarnings("unused")
         int meh = array[1]; // remember 0 based indexes, 1 is the 2nd element (which doesn't exist)
     }
 
-    @Koan
+    @Test
     public void arrayLengthCanBeChecked() {
         assertEquals(new int[1].length, __);
     }

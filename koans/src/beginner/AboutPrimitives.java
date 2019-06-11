@@ -1,18 +1,18 @@
 package beginner;
 
-import com.sandwich.koan.Koan;
+import org.junit.jupiter.api.Test;
 
-import static com.sandwich.koan.constant.KoanConstants.__;
-import static com.sandwich.util.Assert.assertEquals;
+import static tools.Constants.__;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AboutPrimitives {
 
-    @Koan
+    @Test
     public void wholeNumbersAreOfTypeInt() {
         assertEquals(getType(1), __); // hint: int.class
     }
 
-    @Koan
+    @Test
     public void primitivesOfTypeIntHaveAnObjectTypeInteger() {
         Object number = 1;
         assertEquals(getType(number), __);
@@ -21,73 +21,73 @@ public class AboutPrimitives {
         // We will explore this in more detail in intermediate.AboutAutoboxing
     }
 
-    @Koan
+    @Test
     public void integersHaveAFairlyLargeRange() {
         assertEquals(Integer.MIN_VALUE, __);
         assertEquals(Integer.MAX_VALUE, __);
     }
 
-    @Koan
+    @Test
     public void integerSize() {
         assertEquals(Integer.SIZE, __);  // This is the amount of bits used to store an int
     }
 
-    @Koan
+    @Test
     public void wholeNumbersCanAlsoBeOfTypeLong() {
         assertEquals(getType(1L), __);
     }
 
-    @Koan
+    @Test
     public void primitivesOfTypeLongHaveAnObjectTypeLong() {
         Object number = 1L;
         assertEquals(getType(number), __);
     }
 
-    @Koan
+    @Test
     public void longsHaveALargerRangeThanInts() {
         assertEquals(Long.MIN_VALUE, __);
         assertEquals(Long.MAX_VALUE, __);
     }
 
-    @Koan
+    @Test
     public void longSize() {
         assertEquals(Long.SIZE, __);
     }
 
-    @Koan
+    @Test
     public void wholeNumbersCanAlsoBeOfTypeShort() {
         assertEquals(getType((short) 1), __); // The '(short)' is called an explicit cast - to type 'short'
     }
 
-    @Koan
+    @Test
     public void primitivesOfTypeShortHaveAnObjectTypeShort() {
         Object number = (short) 1;
         assertEquals(getType(number), __);
     }
 
-    @Koan
+    @Test
     public void shortsHaveASmallerRangeThanInts() {
         assertEquals(Short.MIN_VALUE, __);  // hint: You'll need an explicit cast
         assertEquals(Short.MAX_VALUE, __);
     }
 
-    @Koan
+    @Test
     public void shortSize() {
         assertEquals(Short.SIZE, __);
     }
 
-    @Koan
+    @Test
     public void wholeNumbersCanAlsoBeOfTypeByte() {
         assertEquals(getType((byte) 1), __);
     }
 
-    @Koan
+    @Test
     public void primitivesOfTypeByteHaveAnObjectTypeByte() {
         Object number = (byte) 1;
         assertEquals(getType(number), __);
     }
 
-    @Koan
+    @Test
     public void bytesHaveASmallerRangeThanShorts() {
         assertEquals(Byte.MIN_VALUE, __);
         assertEquals(Byte.MAX_VALUE, __);
@@ -95,28 +95,28 @@ public class AboutPrimitives {
         // Why would you use short or byte considering that you need to do explicit casts?
     }
 
-    @Koan
+    @Test
     public void byteSize() {
         assertEquals(Byte.SIZE, __);
     }
 
-    @Koan
+    @Test
     public void wholeNumbersCanAlsoBeOfTypeChar() {
         assertEquals(getType((char) 1), __);
     }
 
-    @Koan
+    @Test
     public void singleCharactersAreOfTypeChar() {
         assertEquals(getType('a'), __);
     }
 
-    @Koan
+    @Test
     public void primitivesOfTypeCharHaveAnObjectTypeCharacter() {
         Object number = (char) 1;
         assertEquals(getType(number), __);
     }
 
-    @Koan
+    @Test
     public void charsCanOnlyBePositive() {
         assertEquals((int) Character.MIN_VALUE, __);
         assertEquals((int) Character.MAX_VALUE, __);
@@ -124,70 +124,70 @@ public class AboutPrimitives {
         // Why did we cast MIN_VALUE and MAX_VALUE to int? Try it without the cast.
     }
 
-    @Koan
+    @Test
     public void charSize() {
         assertEquals(Character.SIZE, __);
     }
 
-    @Koan
+    @Test
     public void decimalNumbersAreOfTypeDouble() {
         assertEquals(getType(1.0), __);
     }
 
-    @Koan
+    @Test
     public void primitivesOfTypeDoubleCanBeDeclaredWithoutTheDecimalPoint() {
         assertEquals(getType(1d), __);
     }
 
-    @Koan
+    @Test
     public void primitivesOfTypeDoubleCanBeDeclaredWithExponents() {
         assertEquals(getType(1e3), __);
         assertEquals(1.0e3, __);
         assertEquals(1E3, __);
     }
 
-    @Koan
+    @Test
     public void primitivesOfTypeDoubleHaveAnObjectTypeDouble() {
         Object number = 1.0;
         assertEquals(getType(number), __);
     }
 
-    @Koan
+    @Test
     public void doublesHaveALargeRange() {
         assertEquals(Double.MIN_VALUE, __);
         assertEquals(Double.MAX_VALUE, __);
     }
 
-    @Koan
+    @Test
     public void doubleSize() {
         assertEquals(Double.SIZE, __);
     }
 
-    @Koan
+    @Test
     public void decimalNumbersCanAlsoBeOfTypeFloat() {
         assertEquals(getType(1f), __);
     }
 
-    @Koan
+    @Test
     public void primitivesOfTypeFloatCanBeDeclaredWithExponents() {
         assertEquals(getType(1e3f), __);
         assertEquals(1.0e3f, __);
         assertEquals(1E3f, __);
     }
 
-    @Koan
+    @Test
     public void primitivesOfTypeFloatHaveAnObjectTypeFloat() {
         Object number = 1f;
         assertEquals(getType(number), __);
     }
 
-    @Koan
+    @Test
     public void floatsHaveASmallerRangeThanDoubles() {
         assertEquals(Float.MIN_VALUE, __);
         assertEquals(Float.MAX_VALUE, __);
     }
 
-    @Koan
+    @Test
     public void floatSize() {
         assertEquals(Float.SIZE, __);
     }

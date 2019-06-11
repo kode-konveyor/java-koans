@@ -1,9 +1,9 @@
 package beginner;
 
-import com.sandwich.koan.Koan;
+import org.junit.jupiter.api.Test;
 
-import static com.sandwich.koan.constant.KoanConstants.__;
-import static com.sandwich.util.Assert.assertEquals;
+import static tools.Constants.__;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AboutEnums {
 
@@ -13,7 +13,7 @@ public class AboutEnums {
         // What happens if you type Red() instead?
     }
 
-    @Koan
+    @Test
     public void basicEnums() {
         Colors blue = Colors.Blue;
         assertEquals(blue == Colors.Blue, __);
@@ -21,7 +21,7 @@ public class AboutEnums {
         assertEquals(blue instanceof Colors, __);
     }
 
-    @Koan
+    @Test
     public void basicEnumsAccess() {
         Colors[] colorArray = Colors.values();
         assertEquals(colorArray[2], __);
@@ -37,7 +37,7 @@ public class AboutEnums {
         private int value;
     }
 
-    @Koan
+    @Test
     public void enumsWithAttributes() {
         // value is private but we still can access it. Why?
         // Try moving the enum outside the AboutEnum class... What do you expect?
@@ -59,7 +59,7 @@ public class AboutEnums {
         }
     }
 
-    @Koan
+    @Test
     public void enumsWithMethods() {
         assertEquals(OpticalMedia.CD.getCoolnessFactor(), __);
         assertEquals(OpticalMedia.BluRay.getCoolnessFactor(), __);

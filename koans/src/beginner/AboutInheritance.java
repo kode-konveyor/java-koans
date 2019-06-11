@@ -1,9 +1,9 @@
 package beginner;
 
-import com.sandwich.koan.Koan;
+import org.junit.jupiter.api.Test;
 
-import static com.sandwich.koan.constant.KoanConstants.__;
-import static com.sandwich.util.Assert.assertEquals;
+import static tools.Constants.__;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AboutInheritance {
 
@@ -39,7 +39,7 @@ public class AboutInheritance {
         }
     }
 
-    @Koan
+    @Test
     public void methodOverloading() {
         Cow bob = new Cow();
         Dog max = new Dog();
@@ -53,7 +53,7 @@ public class AboutInheritance {
         // but can Bob the Cow fetch?
     }
 
-    @Koan
+    @Test
     public void methodOverloadingUsingPolymorphism() {
         Animal bob = new Cow();
         Animal max = new Dog();
@@ -65,7 +65,7 @@ public class AboutInheritance {
         // try to write it down here
     }
 
-    @Koan
+    @Test
     public void inheritanceHierarchy() {
         Animal someAnimal = new Cow();
         Animal bob = new Cow();
@@ -77,7 +77,7 @@ public class AboutInheritance {
         assertEquals(bob instanceof Puppy, __);
     }
 
-    @Koan
+    @Test
     public void deeperInheritanceHierarchy() {
         Dog max = new Dog();
         Puppy barney = new Puppy();
@@ -101,7 +101,7 @@ public class AboutInheritance {
 //        ;
 //    }
 //
-//    @Koan
+//    @Test
 //    public void overriddenMethodsMayReturnSubtype() {
 //        // What do you need to change in order to get rid of the type cast?
 //        // Why does this work?

@@ -1,13 +1,13 @@
 package java8;
 
-import com.sandwich.koan.Koan;
+import org.junit.jupiter.api.Test;
 
-import static com.sandwich.koan.constant.KoanConstants.__;
-import static com.sandwich.util.Assert.assertEquals;
+import static tools.Constants.__;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AboutDefaultMethods {
 
-    @Koan
+    @Test
     public void interfaceDefaultMethod() {
         StringUtil stringUtil = new StringUtil() {
             @Override
@@ -20,7 +20,7 @@ public class AboutDefaultMethods {
         assertEquals(capitalizedReversed, __);
     }
 
-    @Koan
+    @Test
     public void interfaceStaticMethod() {
         assertEquals(StringUtil.enclose("me"), __);
     }

@@ -1,11 +1,11 @@
 package java7;
 
-import com.sandwich.koan.Koan;
+import org.junit.jupiter.api.Test;
 
 import java.io.*;
 
-import static com.sandwich.koan.constant.KoanConstants.__;
-import static com.sandwich.util.Assert.assertEquals;
+import static tools.Constants.__;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AboutTryWithResources {
 
@@ -20,18 +20,22 @@ public class AboutTryWithResources {
     }
 
     class WorkException extends Exception {
-        public WorkException(String message) {
+		private static final long serialVersionUID = 1L;
+
+		public WorkException(String message) {
             super(message);
         }
     }
 
     class CloseException extends Exception {
-        public CloseException(String message) {
+		private static final long serialVersionUID = 1L;
+
+		public CloseException(String message) {
             super(message);
         }
     }
 
-    @Koan
+    @Test
     public void lookMaNoClose() {
         String str = "first line"
                 + System.lineSeparator()
@@ -50,7 +54,7 @@ public class AboutTryWithResources {
         assertEquals(line, __);
     }
 
-    @Koan
+    @Test
     public void lookMaNoCloseWithException() throws IOException {
         String line = "no need to close readers";
         try (BufferedReader br =
@@ -63,7 +67,7 @@ public class AboutTryWithResources {
         assertEquals(line, __);
     }
 
-    @Koan
+    @Test
     public void lookMaNoCloseWithMultipleResources() throws IOException {
         String str = "first line"
                 + System.lineSeparator()
@@ -86,7 +90,7 @@ public class AboutTryWithResources {
         assertEquals(line, __);
     }
 
-    @Koan
+    @Test
     public void supressException() {
         String message = "";
         try {

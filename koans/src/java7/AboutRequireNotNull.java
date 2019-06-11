@@ -1,15 +1,15 @@
 package java7;
 
-import com.sandwich.koan.Koan;
+import org.junit.jupiter.api.Test;
 
 import java.util.Objects;
 
-import static com.sandwich.koan.constant.KoanConstants.__;
-import static com.sandwich.util.Assert.assertEquals;
+import static tools.Constants.__;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AboutRequireNotNull {
 
-    @Koan
+    @Test
     public void failArgumentValidationWithRequireNotNull() {
         // This koan demonstrates the use of Objects.requireNotNull
         // in place of traditional argument validation using exceptions
@@ -22,7 +22,7 @@ public class AboutRequireNotNull {
         assertEquals(s, __);
     }
 
-    @Koan
+    @Test
     public void passArgumentValidationWithRequireNotNull() {
         // This koan demonstrates the use of Objects.requireNotNull
         // in place of traditional argument validation using exceptions

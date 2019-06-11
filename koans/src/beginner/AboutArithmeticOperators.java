@@ -1,13 +1,13 @@
 package beginner;
 
-import com.sandwich.koan.Koan;
+import org.junit.jupiter.api.Test;
 
-import static com.sandwich.koan.constant.KoanConstants.__;
-import static com.sandwich.util.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static tools.Constants.__;;
 
 public class AboutArithmeticOperators {
 
-    @Koan
+    @Test
     public void simpleOperations() {
         assertEquals(1, __);
         assertEquals(1 + 1, __);
@@ -19,7 +19,7 @@ public class AboutArithmeticOperators {
         assertEquals((2 + 4) / 2, __);
     }
 
-    @Koan
+    @Test
     public void notSoSimpleOperations() {
         assertEquals(1 / 2, __);
         assertEquals(3 / 2, __);
@@ -27,7 +27,7 @@ public class AboutArithmeticOperators {
         assertEquals(3 % 2, __);
     }
 
-    @Koan
+    @Test
     public void minusMinusVariableMinusMinus() {
         int i = 1;
         assertEquals(--i, __);
@@ -36,7 +36,7 @@ public class AboutArithmeticOperators {
         assertEquals(i, __);
     }
 
-    @Koan
+    @Test
     public void plusPlusVariablePlusPlus() {
         int i = 1;
         assertEquals(++i, __);
@@ -45,7 +45,7 @@ public class AboutArithmeticOperators {
         assertEquals(i, __);
     }
 
-    @Koan
+    @Test
     public void timesAndDivInPlace() {
         int i = 1;
         i *= 2;

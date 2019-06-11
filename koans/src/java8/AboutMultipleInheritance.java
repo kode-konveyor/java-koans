@@ -1,9 +1,9 @@
 package java8;
 
-import com.sandwich.koan.Koan;
+import org.junit.jupiter.api.Test;
 
-import static com.sandwich.koan.constant.KoanConstants.__;
-import static com.sandwich.util.Assert.assertEquals;
+import static tools.Constants.__;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AboutMultipleInheritance {
 
@@ -28,7 +28,7 @@ public class AboutMultipleInheritance {
         }
     }
 
-    @Koan
+    @Test
     public void multipleInheritance() {
         Minotaur minotaur = new Minotaur();
         assertEquals(minotaur.sound(), __);

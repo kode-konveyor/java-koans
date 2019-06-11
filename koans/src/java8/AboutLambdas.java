@@ -1,11 +1,11 @@
 package java8;
 
-import com.sandwich.koan.Koan;
+import org.junit.jupiter.api.Test;
 
 import java.util.function.Function;
 
-import static com.sandwich.koan.constant.KoanConstants.__;
-import static com.sandwich.util.Assert.assertEquals;
+import static tools.Constants.__;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AboutLambdas {
 
@@ -27,14 +27,14 @@ public class AboutLambdas {
     //lambda has access to object methods
     Caps toStringLambdaField = s -> toString();
 
-    @Koan
+    @Test
     public void verySimpleLambda() throws InterruptedException {
         Runnable r8 = () -> str = "changed in lambda";
         r8.run();
         assertEquals(str, __);
     }
 
-    @Koan
+    @Test
     public void simpleLambda() {
         Caps caps = (String n) -> {
             return n.toUpperCase();
@@ -43,7 +43,7 @@ public class AboutLambdas {
         assertEquals(capitalized, __);
     }
 
-    @Koan
+    @Test
     public void simpleSuccinctLambda() {
         //parameter type can be omitted,
         //code block braces {} and return statement can be omitted for single statement lambda
@@ -53,17 +53,17 @@ public class AboutLambdas {
         assertEquals(capitalized, __);
     }
 
-    @Koan
+    @Test
     public void lambdaField() {
         assertEquals(thisLambdaField.capitalize(""), __);
     }
 
-    @Koan
+    @Test
     public void lambdaField2() {
         assertEquals(toStringLambdaField.capitalize(""), __);
     }
 
-    @Koan
+    @Test
     public void effectivelyFinal() {
         //final can be omitted like this:
         /* final */
@@ -72,14 +72,14 @@ public class AboutLambdas {
         assertEquals(caps.capitalize(effectivelyFinal), __);
     }
 
-    @Koan
+    @Test
     public void methodReference() {
         Caps caps = String::toUpperCase;
         String capitalized = caps.capitalize("Gosling");
         assertEquals(capitalized, __);
     }
 
-    @Koan
+    @Test
     public void thisIsSurroundingClass() {
         //"this" in lambda points to surrounding class
         Function<String, String> foo = s -> s + this.fieldFoo + s;

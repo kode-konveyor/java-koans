@@ -1,13 +1,13 @@
 package java7;
 
-import com.sandwich.koan.Koan;
+import org.junit.jupiter.api.Test;
 
-import static com.sandwich.koan.constant.KoanConstants.__;
-import static com.sandwich.util.Assert.assertEquals;
+import static tools.Constants.__;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AboutStringsInSwitch {
 
-    @Koan
+    @Test
     public void stringsInSwitchStatement() {
         String[] animals = {"Dog", "Cat", "Tiger", "Elephant", "Zebra"};
         String dangerous = null;

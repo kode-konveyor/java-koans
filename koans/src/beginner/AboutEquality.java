@@ -1,13 +1,13 @@
 package beginner;
 
-import com.sandwich.koan.Koan;
+import org.junit.jupiter.api.Test;
 
-import static com.sandwich.koan.constant.KoanConstants.__;
-import static com.sandwich.util.Assert.assertEquals;
+import static tools.Constants.__;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AboutEquality {
 
-    @Koan
+    @Test
     public void doubleEqualsTestsIfTwoObjectsAreTheSame() {
         Object object = new Object();
         Object sameObject = object;
@@ -15,36 +15,36 @@ public class AboutEquality {
         assertEquals(object == new Object(), __);
     }
 
-    @Koan
+    @Test
     public void equalsMethodByDefaultTestsIfTwoObjectsAreTheSame() {
         Object object = new Object();
         assertEquals(object.equals(object), __);
         assertEquals(object.equals(new Object()), __);
     }
 
-    @Koan
+    @Test
     public void equalsMethodCanBeChangedBySubclassesToTestsIfTwoObjectsAreEqual() {
-        Object object = new Integer(1);
+        Object object = Integer.valueOf(1);
         assertEquals(object.equals(object), __);
-        assertEquals(object.equals(new Integer(1)), __);
+        assertEquals(object.equals(Integer.valueOf(1)), __);
         // Note: This means that for the class 'Object' there is no difference between 'equal' and 'same'
         // but for the class 'Integer' there is difference - see below
     }
 
-    @Koan
+    @Test
     public void equalsMethodCanBeChangedBySubclassesToTestsIfTwoObjectsAreEqualExample() {
-        Integer value1 = new Integer(4);
-        Integer value2 = new Integer(2 + 2);
+        Integer value1 = Integer.valueOf(4);
+        Integer value2 = Integer.valueOf(2 + 2);
         assertEquals(value1.equals(value2), __);
         assertEquals(value1, __);
     }
 
-    @Koan
+    @Test
     public void objectsNeverEqualNull() {
         assertEquals(new Object().equals(null), __);
     }
 
-    @Koan
+    @Test
     public void objectsEqualThemselves() {
         Object obj = new Object();
         assertEquals(obj.equals(obj), __);

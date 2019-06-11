@@ -1,17 +1,17 @@
 package java7;
 
-import com.sandwich.koan.Koan;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static com.sandwich.koan.constant.KoanConstants.__;
-import static com.sandwich.util.Assert.assertEquals;
+import static tools.Constants.__;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AboutDiamondOperator {
 
-    @Koan
+    @Test
     public void diamondOperator() {
         String[] animals = {"Dog", "Cat", "Tiger", "Elephant", "Zebra"};
         //Generic type of array list inferred - empty <> operator
@@ -19,7 +19,7 @@ public class AboutDiamondOperator {
         assertEquals(animalsList, __);
     }
 
-    @Koan
+    @Test
     public void diamondOperatorInMethodCall() {
         String[] animals = {"Dog", "Cat", "Tiger", "Elephant", "Zebra"};
         //type of new ArrayList<>() inferred from method parameter

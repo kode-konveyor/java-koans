@@ -1,11 +1,11 @@
 package beginner;
 
-import com.sandwich.koan.Koan;
+import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 
-import static com.sandwich.koan.constant.KoanConstants.__;
-import static com.sandwich.util.Assert.assertEquals;
+import static tools.Constants.__;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AboutExceptions {
 
@@ -13,7 +13,7 @@ public class AboutExceptions {
         throw new IOException();
     }
 
-    @Koan
+    @Test
     public void catchCheckedExceptions() {
         String s;
         try {
@@ -25,7 +25,7 @@ public class AboutExceptions {
         assertEquals(s, __);
     }
 
-    @Koan
+    @Test
     public void useFinally() {
         String s = "";
         try {
@@ -39,7 +39,7 @@ public class AboutExceptions {
         assertEquals(s, __);
     }
 
-    @Koan
+    @Test
     public void finallyWithoutCatch() {
         String s = "";
         try {
@@ -62,7 +62,7 @@ public class AboutExceptions {
         }
     }
 
-    @Koan
+    @Test
     public void finallyIsAlwaysRan() {
         StringBuilder whatHappened = new StringBuilder();
         tryCatchFinallyWithVoidReturn(whatHappened);
@@ -87,7 +87,7 @@ public class AboutExceptions {
         }
     }
 
-    @Koan
+    @Test
     public void returnInFinallyBlock() {
         StringBuilder whatHappened = new StringBuilder();
         // Which value will be returned here?
@@ -99,7 +99,7 @@ public class AboutExceptions {
         throw new RuntimeException();
     }
 
-    @Koan
+    @Test
     public void catchUncheckedExceptions() {
         // What do you need to do to catch the unchecked exception?
         doUncheckedStuff();
@@ -117,7 +117,7 @@ public class AboutExceptions {
         throw new ChildException();
     }
 
-    @Koan
+    @Test
     public void catchOrder() {
         String s = "";
         try {
@@ -130,7 +130,7 @@ public class AboutExceptions {
         assertEquals(s, __);
     }
 
-    @Koan
+    @Test
     public void failArgumentValidationWithAnIllegalArgumentException() {
         // This koan demonstrates the use of exceptions in argument validation
         String s = "";
@@ -142,7 +142,7 @@ public class AboutExceptions {
         assertEquals(s, __);
     }
 
-    @Koan
+    @Test
     public void passArgumentValidationWithAnIllegalArgumentException() {
         // This koan demonstrates the use of exceptions in argument validation
         String s = "";

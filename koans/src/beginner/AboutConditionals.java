@@ -1,15 +1,15 @@
 package beginner;
 
 
-import com.sandwich.koan.Koan;
+import org.junit.jupiter.api.Test;
 
-import static com.sandwich.koan.constant.KoanConstants.__;
-import static com.sandwich.util.Assert.assertEquals;
+import static tools.Constants.__;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class AboutConditionals {
 
-    @Koan
+    @Test
     public void basicIf() {
         int x = 1;
         if (true) {
@@ -18,7 +18,7 @@ public class AboutConditionals {
         assertEquals(x, __);
     }
 
-    @Koan
+    @Test
     public void basicIfElse() {
         int x = 1;
         boolean secretBoolean = false;
@@ -30,7 +30,7 @@ public class AboutConditionals {
         assertEquals(x, __);
     }
 
-    @Koan
+    @Test
     public void basicIfElseIfElse() {
         int x = 1;
         boolean secretBoolean = false;
@@ -45,7 +45,7 @@ public class AboutConditionals {
         assertEquals(x, __);
     }
 
-    @Koan
+    @Test
     public void nestedIfsWithoutCurlysAreReallyMisleading() {
         int x = 1;
         boolean secretBoolean = false;
@@ -61,7 +61,7 @@ public class AboutConditionals {
         assertEquals(x, __);
     }
 
-    @Koan
+    @Test
     public void ifAsIntended() {
         int x = 1;
         boolean secretBoolean = false;
@@ -79,7 +79,7 @@ public class AboutConditionals {
         assertEquals(x, __);
     }
 
-    @Koan
+    @Test
     public void basicSwitchStatement() {
         int i = 1;
         String result = "Basic ";
@@ -96,7 +96,7 @@ public class AboutConditionals {
         assertEquals(result, __);
     }
 
-    @Koan
+    @Test
     public void switchStatementFallThrough() {
         int i = 1;
         String result = "Basic ";
@@ -111,7 +111,7 @@ public class AboutConditionals {
         assertEquals(result, __);
     }
 
-    @Koan
+    @Test
     public void switchStatementCrazyFallThrough() {
         int i = 5;
         String result = "Basic ";
@@ -126,7 +126,7 @@ public class AboutConditionals {
         assertEquals(result, __);
     }
 
-    @Koan
+    @Test
     public void switchStatementConstants() {
         int i = 5;
         // What happens if you remove the 'final' modifier?
@@ -143,7 +143,7 @@ public class AboutConditionals {
         assertEquals(result, __);
     }
 
-    @Koan
+    @Test
     public void switchStatementSwitchValues() {
         // Try different (primitive) types for 'c'
         // Which types do compile?
@@ -160,7 +160,7 @@ public class AboutConditionals {
         assertEquals(result, __);
     }
 
-    @Koan
+    @Test
     public void shortCircuit() {
         Counter trueCount = new Counter(true);
         Counter falseCount = new Counter(false);
@@ -173,7 +173,7 @@ public class AboutConditionals {
         assertEquals(falseCount.count, __);
     }
     
-    @Koan
+    @Test
     public void bitwise() {
         Counter trueCount = new Counter(true);
         Counter falseCount = new Counter(false);
