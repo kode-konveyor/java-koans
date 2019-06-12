@@ -6,7 +6,7 @@ import java.text.MessageFormat;
 
 import static tools.Constants.__;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.Assert.fail;
+import static org.junit.jupiter.api.Assertions.fail;
 
 public class AboutStrings {
 
