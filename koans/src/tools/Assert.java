@@ -1,15 +1,15 @@
 package tools;
 
-import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Assert {
 	
 	public static void assertTrue(String arg) {
-		Assertions.assertTrue(false);
+		assertEquals(true, arg);
 	}
 	
 	public static void assertFalse(String arg) {
-		Assertions.assertFalse(true);
+		assertEquals(false, arg);
 	}
 
 }
