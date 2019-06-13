@@ -11,9 +11,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AboutDiamondOperator {
 
-    @Test
+    private String[] animals = new String[] {"Dog", "Cat", "Tiger", "Elephant", "Zebra"};;
+
+	@Test
     public void diamondOperator() {
-        String[] animals = {"Dog", "Cat", "Tiger", "Elephant", "Zebra"};
         //Generic type of array list inferred - empty <> operator
         List<String> animalsList = new ArrayList<>(Arrays.asList(animals));
         assertEquals(animalsList, __);
@@ -21,14 +22,12 @@ public class AboutDiamondOperator {
 
     @Test
     public void diamondOperatorInMethodCall() {
-        String[] animals = {"Dog", "Cat", "Tiger", "Elephant", "Zebra"};
         //type of new ArrayList<>() inferred from method parameter
         List<String> animalsList = fill(new ArrayList<>());
         assertEquals(animalsList, __);
     }
 
     private List<String> fill(List<String> list) {
-        String[] animals = {"Dog", "Cat", "Tiger", "Elephant", "Zebra"};
         list.addAll(Arrays.asList(animals));
         return list;
     }

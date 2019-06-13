@@ -4,9 +4,12 @@ import org.junit.jupiter.api.Test;
 
 import static tools.Constants.__;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 public class AboutEquality {
-    // This suite of Koans expands on the concepts introduced in beginner.AboutEquality
+    private static final String REMOVE_THIS_LINE = "Remove this after you've implemented Car.equals";
+
+	// This suite of Koans expands on the concepts introduced in beginner.AboutEquality
 
     @Test
     public void sameObject() {
@@ -29,7 +32,9 @@ public class AboutEquality {
     }
 
     static class Car {
-        private String name = "";
+        @SuppressWarnings("unused")
+		private String name = "";
+        @SuppressWarnings("unused")
         private int horsepower = 0;
 
         public Car(String s, int p) {
@@ -66,6 +71,7 @@ public class AboutEquality {
         Car car1 = new Car("Beetle", 50);
         Car car2 = new Car("Porsche", 300);
         // @see Car.equals (around line 45) for the place to solve this
+        fail(REMOVE_THIS_LINE);
         assertEquals(car1.equals(car2), false);
     }
 
@@ -74,6 +80,7 @@ public class AboutEquality {
         Car car1 = new Car("Beetle", 50);
         String s = "foo";
         // @see Car.equals (around line 45) for the place to solve this
+        fail(REMOVE_THIS_LINE);
         assertEquals(car1.equals(s), false);
     }
 
@@ -81,6 +88,7 @@ public class AboutEquality {
     public void equalNullForOwnObjects() {
         Car car1 = new Car("Beetle", 50);
         // @see Car.equals (around line 45) for the place to solve this
+        fail(REMOVE_THIS_LINE);
         assertEquals(car1.equals(null), false);
     }
 

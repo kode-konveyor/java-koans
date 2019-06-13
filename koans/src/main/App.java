@@ -5,11 +5,11 @@ import java.io.PrintWriter;
 public class App {
 	
 	public static void main(String[] args) {
-		
-		JUnit5TestsFromJava runner = new JUnit5TestsFromJava();
+		TestSummaryListener listener = new TestSummaryListener();
+		JUnit5TestsFromJava runner = new JUnit5TestsFromJava(listener);
 	    runner.runAll();
 	 
-	    TestSummaryByClass summary = runner.listener.getSummaryByClass();
+	    TestSummaryByClass summary = listener.getSummaryByClass();
 	    summary.printTo(new PrintWriter(System.out));
 	}
 
