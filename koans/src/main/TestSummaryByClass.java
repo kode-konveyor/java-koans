@@ -3,15 +3,15 @@ package main;
 import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 import java.util.function.Consumer;
 import java.util.function.ToIntFunction;
 
-import org.junit.platform.engine.TestExecutionResult;
-import org.junit.platform.launcher.TestIdentifier;
+import org.junit.platform.engine.TestExecutionResult.Status;
 
 public class TestSummaryByClass {
 	
-	Map<String, ComparableClassResult> results = new HashMap<String, ComparableClassResult>();
+	private Map<String, ComparableClassResult> results = new HashMap<String, ComparableClassResult>();
 	
 	public void printTo(PrintWriter writer) {
 		int allPassed = countSubset(r->r.getPassedCount());
@@ -30,16 +30,18 @@ public class TestSummaryByClass {
 		return (result) -> writer.println(result.getFormatted(ColoredClassResultFormatter.create()));
 	}
 
-	
-
 	private int countSubset(ToIntFunction<? super ClassResult> mapper) {
 		return results.values().stream().mapToInt(mapper).sum();
 	}
 
-	public void add(TestIdentifier testIdentifier, TestExecutionResult testExecutionResult) {
-		String classId = testIdentifier.getParentId().orElse("Undefined");
+	public void add(Optional<String> parentId, String displayName, Status status) {
+
+		String classId = parentId.orElse("Undefined");
 		results.putIfAbsent(classId, new ComparableClassResult(classId));
-		results.get(classId).add(testIdentifier.getDisplayName(), testExecutionResult.getStatus());
-		
+		results.get(classId).add(displayName, status);
+	}
+
+	protected Map<String, ComparableClassResult> getResult() {
+		return results;
 	}
 }

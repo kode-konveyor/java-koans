@@ -15,9 +15,13 @@ public class ClassResult {
 		this.passed = new HashSet<String>();
 		this.failed = new HashSet<String>();
 	}
-	
+
 	private String reduceClassIdToName(String classId) {
-		return classId.split("[\\[\\]]")[3].substring("class:".length());
+		try {
+			return classId.split("[\\[\\]]")[3].substring("class:".length());
+		} catch (ArrayIndexOutOfBoundsException e) {
+			throw new IllegalArgumentException(String.format("Illegal ClassId [%s]", classId), e);
+		}
 	}
 
 	public void add(String test, Status status) {
@@ -32,15 +36,19 @@ public class ClassResult {
 		return formatter.format(className, passed, failed);
 	}
 
-	public double getRate() {
-		return Double.valueOf(passed.size()) / (passed.size() + failed.size());
-	}
-
 	public int getPassedCount() {
 		return passed.size();
 	}
 
 	public int getTestCount() {
 		return passed.size() + failed.size();
+	}
+	
+	@Override
+	public boolean equals(Object other) {
+		if (other instanceof ClassResult) {
+			return className.equals(((ClassResult) other).className);
+		}
+		return false;
 	}
 }

@@ -10,11 +10,14 @@ public class TestSummaryListener extends SummaryGeneratingListener {
 
 	@Override
 	public void executionFinished(TestIdentifier testIdentifier, TestExecutionResult testExecutionResult) {
-		if (testIdentifier.getType().isTest()) {
-			result.add(testIdentifier, testExecutionResult);
-		}
+		executionFinished(new TestIdentifierWrapper(testIdentifier), testExecutionResult);
 		super.executionFinished(testIdentifier, testExecutionResult);
-		
+	}
+
+	protected void executionFinished(TestIdentifierWrapper testIdentifier, TestExecutionResult testExecutionResult) {
+		if (testIdentifier.isTest()) {
+			result.add(testIdentifier.getParentId(), testIdentifier.getDisplayName(), testExecutionResult.getStatus());
+		}
 	}
 
 	public TestSummaryByClass getSummaryByClass() {
