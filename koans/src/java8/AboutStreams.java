@@ -1,14 +1,13 @@
 package java8;
 
-import com.sandwich.koan.Koan;
+import org.junit.jupiter.api.Test;
 
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
-import static com.sandwich.koan.constant.KoanConstants.__;
-import static com.sandwich.util.Assert.assertEquals;
+import static tools.Constants.__;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AboutStreams {
 
@@ -16,13 +15,13 @@ public class AboutStreams {
 
     List<String> places = Arrays.asList("Belgrade", "Zagreb", "Sarajevo", "Skopje", "Ljubljana", "Podgorica");
 
-    @Koan
+    @Test
     public void simpleCount() {
         long count = places.stream().count();
         assertEquals(count, __);
     }
 
-    @Koan
+    @Test
     public void filteredCount() {
         long count = places.stream()
                 .filter(s -> s.startsWith("S"))
@@ -30,7 +29,7 @@ public class AboutStreams {
         assertEquals(count, __);
     }
 
-    @Koan
+    @Test
     public void max() {
         String longest = places.stream()
                 .max(Comparator.comparing(cityName -> cityName.length()))
@@ -38,7 +37,7 @@ public class AboutStreams {
         assertEquals(longest, __);
     }
 
-    @Koan
+    @Test
     public void min() {
         String shortest = places.stream()
                 .min(Comparator.comparing(cityName -> cityName.length()))
@@ -46,21 +45,21 @@ public class AboutStreams {
         assertEquals(shortest, __);
     }
 
-    @Koan
+    @Test
     public void reduce() {
         String join = places.stream()
                 .reduce("", String::concat);
         assertEquals(join, __);
     }
 
-    @Koan
+    @Test
     public void reduceWithoutStarterReturnsOptional() {
         Optional<String> join = places.stream()
                 .reduce(String::concat);
         assertEquals(join.get(), __);
     }
 
-    @Koan
+    @Test
     public void join() {
         String join = places.stream()
                 .reduce((accumulated, cityName) -> accumulated + "\", \"" + cityName)
@@ -68,21 +67,21 @@ public class AboutStreams {
         assertEquals(join, __);
     }
 
-    @Koan
+    @Test
     public void reduceWithBinaryOperator() {
         String join = places.stream()
                 .reduce("", String::concat);
         assertEquals(join, __);
     }
 
-    @Koan
+    @Test
     public void stringJoin() {
         String join = places.stream()
                 .collect(Collectors.joining("\", \""));
         assertEquals(join, __);
     }
 
-    @Koan
+    @Test
     public void mapReduce() {
         OptionalDouble averageLengthOptional = places.stream()
                 .mapToInt(String::length)
@@ -91,7 +90,7 @@ public class AboutStreams {
         assertEquals(averageLength, __);
     }
 
-    @Koan
+    @Test
     public void parallelMapReduce() {
         int lengthSum = places.parallelStream()
                 .mapToInt(String::length)
@@ -99,7 +98,7 @@ public class AboutStreams {
         assertEquals(lengthSum, __);
     }
 
-    @Koan
+    @Test
     public void limitSkip() {
         int lengthSum_Limit_3_Skip_1 = places.stream()
                 .mapToInt(String::length)
@@ -109,9 +108,9 @@ public class AboutStreams {
         assertEquals(lengthSum_Limit_3_Skip_1, __);
     }
 
-    @Koan
+    @Test
     public void lazyEvaluation() {
-        Stream stream = places.stream()
+        places.stream()
                 .filter(s -> {
                     str = "hello";
                     return s.startsWith("S");
@@ -119,13 +118,13 @@ public class AboutStreams {
         assertEquals(str, __);
     }
 
-    @Koan
+    @Test
     public void sumRange() {
         int sum = IntStream.range(1, 4).sum();
         assertEquals(sum, __);
     }
 
-    @Koan
+    @Test
     public void rangeToList() {
         List<Integer> range = IntStream.range(1, 4)
                 .boxed()

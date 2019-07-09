@@ -1,18 +1,18 @@
 package intermediate;
 
 
-import com.sandwich.koan.Koan;
+import org.junit.jupiter.api.Test;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static com.sandwich.koan.constant.KoanConstants.__;
-import static com.sandwich.util.Assert.assertEquals;
+import static tools.Constants.__;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class AboutRegularExpressions {
 
-    @Koan
+    @Test
     public void basicMatching() {
         Pattern p = Pattern.compile("xyz");
         Matcher m = p.matcher("xyzxxxxyz");
@@ -24,7 +24,7 @@ public class AboutRegularExpressions {
         assertEquals(m.find(), __);
     }
 
-    @Koan
+    @Test
     public void extendedMatching() {
         Pattern p = Pattern.compile("x.z");
         Matcher m = p.matcher("xyz u x z u xfz");
@@ -37,7 +37,7 @@ public class AboutRegularExpressions {
         assertEquals(m.start(), __);
     }
 
-    @Koan
+    @Test
     public void escapingMetaCharacters() {
         Pattern p = Pattern.compile("end\\.");
         Matcher m = p.matcher("begin. end.");
@@ -46,7 +46,7 @@ public class AboutRegularExpressions {
         assertEquals(m.start(), __);
     }
 
-    @Koan
+    @Test
     public void splittingStrings() {
         String csvDataLine = "1,name,description";
         String[] data = csvDataLine.split(","); // you can use any regex here

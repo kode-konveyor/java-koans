@@ -1,22 +1,22 @@
 package intermediate;
 
-import com.sandwich.koan.Koan;
+import org.junit.jupiter.api.Test;
 
 import java.io.*;
 import java.util.logging.Logger;
 
-import static com.sandwich.koan.constant.KoanConstants.__;
-import static com.sandwich.util.Assert.assertEquals;
+import static tools.Constants.__;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AboutFileIO {
 
-    @Koan
+    @Test
     public void fileObjectDoesntCreateFile() {
         File f = new File("foo.txt");
         assertEquals(f.exists(), __);
     }
 
-    @Koan
+    @Test
     public void fileCreationAndDeletion() throws IOException {
         File f = new File("foo.txt");
         f.createNewFile();
@@ -25,7 +25,7 @@ public class AboutFileIO {
         assertEquals(f.exists(), __);
     }
 
-    @Koan
+    @Test
     public void basicFileWritingAndReading() throws IOException {
         File file = new File("file.txt");
         FileWriter fw = new FileWriter(file);
@@ -46,7 +46,7 @@ public class AboutFileIO {
         file.delete();
     }
 
-    @Koan
+    @Test
     public void betterFileWritingAndReading() throws IOException {
         File file = new File("file.txt");
         file.deleteOnExit();
@@ -80,7 +80,7 @@ public class AboutFileIO {
         }
     }
 
-    @Koan
+    @Test
     public void directChainingForReadingAndWriting() throws IOException {
         File file = new File("file.txt");
         PrintWriter pw = new PrintWriter(file);

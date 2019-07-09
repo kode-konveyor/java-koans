@@ -1,6 +1,6 @@
 package intermediate;
 
-import com.sandwich.koan.Koan;
+import org.junit.jupiter.api.Test;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -8,27 +8,27 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-import static com.sandwich.koan.constant.KoanConstants.__;
-import static com.sandwich.util.Assert.assertEquals;
+import static tools.Constants.__;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class AboutDates {
 
     private Date date = new Date(100010001000L);
 
-    @Koan
+    @Test
     public void dateToString() {
         assertEquals(date.toString(), __);
     }
 
-    @Koan
+    @Test
     public void changingDateValue() {
         int oneHourInMiliseconds = 3600000;
         date.setTime(date.getTime() + oneHourInMiliseconds);
         assertEquals(date.toString(), __);
     }
 
-    @Koan
+    @Test
     public void usingCalendarToChangeDates() {
         Calendar cal = Calendar.getInstance();
         cal.setTime(date);
@@ -36,7 +36,7 @@ public class AboutDates {
         assertEquals(cal.getTime().toString(), __);
     }
 
-    @Koan
+    @Test
     public void usingRollToChangeDatesDoesntWrapOtherFields() {
         Calendar cal = Calendar.getInstance();
         cal.setTime(date);
@@ -44,26 +44,26 @@ public class AboutDates {
         assertEquals(cal.getTime().toString(), __);
     }
 
-    @Koan
+    @Test
     public void usingDateFormatToFormatDate() {
         String formattedDate = DateFormat.getDateInstance().format(date);
         assertEquals(formattedDate, __);
     }
 
-    @Koan
+    @Test
     public void usingDateFormatToFormatDateShort() {
         String formattedDate = DateFormat.getDateInstance(DateFormat.SHORT).format(date);
         assertEquals(formattedDate, __);
     }
 
-    @Koan
+    @Test
     public void usingDateFormatToFormatDateFull() {
         String formattedDate = DateFormat.getDateInstance(DateFormat.FULL).format(date);
         // There is also DateFormat.MEDIUM and DateFormat.LONG... you get the idea ;-)
         assertEquals(formattedDate, __);
     }
 
-    @Koan
+    @Test
     public void usingDateFormatToParseDates() throws ParseException {
         DateFormat dateFormat = new SimpleDateFormat("MM-dd-yyyy");
         Date date2 = dateFormat.parse("01-01-2000");

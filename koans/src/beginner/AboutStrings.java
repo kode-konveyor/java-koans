@@ -1,21 +1,21 @@
 package beginner;
 
-import com.sandwich.koan.Koan;
+import org.junit.jupiter.api.Test;
 
 import java.text.MessageFormat;
 
-import static com.sandwich.koan.constant.KoanConstants.__;
-import static com.sandwich.util.Assert.assertEquals;
-import static com.sandwich.util.Assert.fail;
+import static tools.Constants.__;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 public class AboutStrings {
 
-    @Koan
+    @Test
     public void implicitStrings() {
         assertEquals("just a plain ole string".getClass(), __);
     }
 
-    @Koan
+    @Test
     public void newString() {
         // very rarely if ever should Strings be created via new String() in
         // practice - generally it is redundant, and done repetitively can be slow
@@ -24,21 +24,21 @@ public class AboutStrings {
         assertEquals(string.equals(empty), __);
     }
 
-    @Koan
+    @Test
     public void newStringIsRedundant() {
         String stringInstance = "zero";
         String stringReference = new String(stringInstance);
         assertEquals(stringInstance.equals(stringReference), __);
     }
 
-    @Koan
+    @Test
     public void newStringIsNotIdentical() {
         String stringInstance = "zero";
         String stringReference = new String(stringInstance);
         assertEquals(stringInstance == stringReference, __);
     }
 
-    @Koan
+    @Test
     public void stringIsEmpty() {
         assertEquals("".isEmpty(), __);
         assertEquals("one".isEmpty(), __);
@@ -47,14 +47,14 @@ public class AboutStrings {
         assertEquals(new String("one").isEmpty(), __);
     }
 
-    @Koan
+    @Test
     public void stringLength() {
         assertEquals("".length(), __);
         assertEquals("one".length(), __);
         assertEquals("the number is one".length(), __);
     }
 
-    @Koan
+    @Test
     public void stringTrim() {
         assertEquals("".trim(), __);
         assertEquals("one".trim(), "one");
@@ -64,7 +64,7 @@ public class AboutStrings {
         assertEquals("\t\t\twhat about now?\t".trim(), __);
     }
 
-    @Koan
+    @Test
     public void stringConcatenation() {
         String one = "one";
         String space = " ";
@@ -74,19 +74,19 @@ public class AboutStrings {
         assertEquals(two + space + one, __);
     }
 
-    @Koan
+    @Test
     public void stringUpperCase() {
         String str = "I am a number one!";
         assertEquals(str.toUpperCase(), __);
     }
 
-    @Koan
+    @Test
     public void stringLowerCase() {
         String str = "I AM a number ONE!";
         assertEquals(str.toLowerCase(), __);
     }
 
-    @Koan
+    @Test
     public void stringCompare() {
         String str = "I AM a number ONE!";
         assertEquals(str.compareTo("I AM a number ONE!") == 0, __);
@@ -94,7 +94,7 @@ public class AboutStrings {
         assertEquals(str.compareTo("I AM A NUMBER ONE!") == 0, __);
     }
 
-    @Koan
+    @Test
     public void stringCompareIgnoreCase() {
         String str = "I AM a number ONE!";
         assertEquals(str.compareToIgnoreCase("I AM a number ONE!") == 0, __);
@@ -102,7 +102,7 @@ public class AboutStrings {
         assertEquals(str.compareToIgnoreCase("I AM A NUMBER ONE!") == 0, __);
     }
 
-    @Koan
+    @Test
     public void stringStartsWith() {
         assertEquals("".startsWith("one"), __);
         assertEquals("one".startsWith("one"), __);
@@ -110,7 +110,7 @@ public class AboutStrings {
         assertEquals("ONE is the number".startsWith("one"), __);
     }
 
-    @Koan
+    @Test
     public void stringEndsWith() {
         assertEquals("".endsWith("one"), __);
         assertEquals("one".endsWith("one"), __);
@@ -119,7 +119,7 @@ public class AboutStrings {
         assertEquals("the number is One".endsWith("one"), __);
     }
 
-    @Koan
+    @Test
     public void stringSubstring() {
         String str = "I AM a number ONE!";
         assertEquals(str.substring(0), __);
@@ -129,36 +129,36 @@ public class AboutStrings {
         assertEquals(str.substring(7, str.length()), __);
     }
 
-    @Koan
+    @Test
     public void stringContains() {
         String str = "I AM a number ONE!";
         assertEquals(str.contains("one"), __);
         assertEquals(str.contains("ONE"), __);
     }
 
-    @Koan
+    @Test
     public void stringReplace() {
         String str = "I am a number ONE!";
         assertEquals(str.replace("ONE", "TWO"), __);
         assertEquals(str.replace("I am", "She is"),  __);
     }
 
-    @Koan
+    @Test
     public void stringBuilderCanActAsAMutableString() {
         assertEquals(new StringBuilder("one").append(" ").append("two").toString(), __);
     }
 
-    @Koan
+    @Test
     public void readableStringFormattingWithStringFormat() {
         assertEquals(String.format("%s %s %s", "a", "b", "a"), __);
     }
 
-    @Koan
+    @Test
     public void extraArgumentsToStringFormatGetIgnored() {
         assertEquals(String.format("%s %s %s", "a", "b", "c", "d"), __);
     }
 
-    @Koan
+    @Test
     public void insufficientArgumentsToStringFormatCausesAnError() {
         try {
             String.format("%s %s %s", "a", "b");
@@ -169,17 +169,17 @@ public class AboutStrings {
         }
     }
 
-    @Koan
+    @Test
     public void readableStringFormattingWithMessageFormat() {
         assertEquals(MessageFormat.format("{0} {1} {0}", "a", "b"), __);
     }
 
-    @Koan
+    @Test
     public void extraArgumentsToMessageFormatGetIgnored() {
         assertEquals(MessageFormat.format("{0} {1} {0}", "a", "b", "c"), __);
     }
 
-    @Koan
+    @Test
     public void insufficientArgumentsToMessageFormatDoesNotReplaceTheToken() {
         assertEquals(MessageFormat.format("{0} {1} {0}", "a"), __);
     }

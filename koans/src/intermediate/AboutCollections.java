@@ -1,16 +1,16 @@
 package intermediate;
 
-import com.sandwich.koan.Koan;
+import org.junit.jupiter.api.Test;
 
 import java.util.*;
 
-import static com.sandwich.koan.constant.KoanConstants.__;
-import static com.sandwich.util.Assert.assertEquals;
+import static tools.Constants.__;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class AboutCollections {
 
-    @Koan
+    @Test
     public void usingAnArrayList() {
         // List = interface
         // The generic syntax and special generic cases will be handled in
@@ -26,7 +26,7 @@ public class AboutCollections {
         assertEquals(list.get(2), __);
     }
 
-    @Koan
+    @Test
     public void usingAQueue() {
         // Queue = interface
         Queue<String> queue = new PriorityQueue<String>();
@@ -41,7 +41,7 @@ public class AboutCollections {
         assertEquals(queue.isEmpty(), __);
     }
 
-    @Koan
+    @Test
     public void usingABasicSet() {
         Set<String> set = new HashSet<String>();
         set.add("Dog");
@@ -53,7 +53,7 @@ public class AboutCollections {
         assertEquals(set.contains("Chicken"), __);
     }
 
-    @Koan
+    @Test
     public void usingABasicMap() {
         Map<String, String> map = new HashMap<String, String>();
         map.put("first key", "first value");
@@ -66,7 +66,7 @@ public class AboutCollections {
         assertEquals(map.get("first key"), __);
     }
 
-    @Koan
+    @Test
     public void usingBackedArrayList() {
         String[] array = {"a", "b", "c"};
         List<String> list = Arrays.asList(array);
@@ -77,7 +77,7 @@ public class AboutCollections {
         // Just think of it as quantum state teleportation...
     }
 
-    @Koan
+    @Test
     public void usingBackedSubMap() {
         TreeMap<String, String> map = new TreeMap<String, String>();
         map.put("a", "Aha");
@@ -96,7 +96,7 @@ public class AboutCollections {
         // that are connected forever...
     }
 
-    @Koan
+    @Test
     public void differenceBetweenOrderedAndSorted() {
         TreeSet<String> sorted = new TreeSet<String>();
         sorted.add("c");

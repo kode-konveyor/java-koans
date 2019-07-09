@@ -1,27 +1,27 @@
 package beginner;
 
-import com.sandwich.koan.Koan;
+import org.junit.jupiter.api.Test;
 
-import static com.sandwich.koan.constant.KoanConstants.__;
-import static com.sandwich.util.Assert.assertEquals;
+import static tools.Constants.__;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AboutBitwiseOperators {
 
-    @Koan
+    @Test
     public void fullAnd() {
         int i = 1;
         if (true & (++i < 8)) i = i + 1;
         assertEquals(i, __);
     }
 
-    @Koan
+    @Test
     public void shortCircuitAnd() {
         int i = 1;
         if (true && (i < -28)) i = i + 1;
         assertEquals(i, __);
     }
 
-    @Koan
+    @Test
     public void aboutXOR() {
         int i = 1;
         int a = 6;
@@ -29,7 +29,7 @@ public class AboutBitwiseOperators {
         assertEquals(i, __);
     }
 
-    @Koan
+    @Test
     public void dontMistakeEqualsForEqualsEquals() {
         int i = 1;
         boolean a = false;
@@ -39,21 +39,21 @@ public class AboutBitwiseOperators {
         // How could you write the condition 'with a twist' to avoid this trap?
     }
 
-    @Koan
+    @Test
     public void aboutBitShiftingRightShift() {
         int rightShift = 8;
         rightShift = rightShift >> 1;
         assertEquals(rightShift, __);
     }
 
-    @Koan
+    @Test
     public void aboutBitShiftingLeftShift() {
         int leftShift = 0x80000000; // Is this number positive or negative?
         leftShift = leftShift << 1;
         assertEquals(leftShift, __);
     }
 
-    @Koan
+    @Test
     public void aboutBitShiftingRightUnsigned() {
         int rightShiftNegativeStaysNegative = 0x80000000;
         rightShiftNegativeStaysNegative = rightShiftNegativeStaysNegative >> 4;

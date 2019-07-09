@@ -6,8 +6,6 @@ lib/build
 lib/out
 koans/data
 koans/data*
-.classpath
-.project
 .settings
 koans/app/data
 lib/file-compiler/bin

@@ -1,17 +1,17 @@
 package beginner;
 
-import com.sandwich.koan.Koan;
+import org.junit.jupiter.api.Test;
 
-import static com.sandwich.util.Assert.fail;
+import static org.junit.jupiter.api.Assertions.fail;
 
 public class AboutKoans {
 
-    @Koan
+    @Test
     public void findAboutKoansFile() {
         fail("delete this line to advance");
     }
 
-    @Koan
+    @Test
     public void definitionOfKoanCompletion() {
         boolean koanIsComplete = false;
         if (!koanIsComplete) {

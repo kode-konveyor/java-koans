@@ -1,8 +1,9 @@
 package advanced;
 
-import com.sandwich.koan.Koan;
+import static org.junit.jupiter.api.Assertions.fail;
 
-import static com.sandwich.util.Assert.fail;
+import org.junit.jupiter.api.Test;
+
 
 public class AboutMocks {
 
@@ -35,7 +36,7 @@ public class AboutMocks {
         }
     }
 
-    @Koan
+    @Test
     public void simpleAnonymousMock() {
         // HINT: pass a safe Collaborator implementation to constructor
         // new ClassUnderTest(new Collaborator(){... it should not be the

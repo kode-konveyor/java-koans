@@ -1,17 +1,17 @@
 package java8;
 
-import com.sandwich.koan.Koan;
+import org.junit.jupiter.api.Test;
 
 import java.util.Optional;
 
-import static com.sandwich.koan.constant.KoanConstants.__;
-import static com.sandwich.util.Assert.assertEquals;
+import static tools.Constants.__;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AboutOptional {
 
     boolean optionalIsPresentField = false;
 
-    @Koan
+    @Test
     public void isPresent() {
         boolean optionalIsPresent = false;
         Optional<String> value = notPresent();
@@ -21,9 +21,9 @@ public class AboutOptional {
         assertEquals(optionalIsPresent, __);
     }
 
-    @Koan
+    @Test
     public void ifPresentLambda() {
-        Optional<String> value = notPresent();
+        Optional<String> value = present();
         value.ifPresent(x -> optionalIsPresentField = true);
         assertEquals(optionalIsPresentField, __);
     }

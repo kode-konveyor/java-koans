@@ -1,6 +1,6 @@
 package intermediate;
 
-import com.sandwich.koan.Koan;
+import org.junit.jupiter.api.Test;
 
 import java.text.DateFormat;
 import java.text.NumberFormat;
@@ -8,12 +8,12 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-import static com.sandwich.koan.constant.KoanConstants.__;
-import static com.sandwich.util.Assert.assertEquals;
+import static tools.Constants.__;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AboutLocale {
 
-    @Koan
+    @Test
     public void localizedOutputOfDates() {
         Calendar cal = Calendar.getInstance();
         cal.set(2011, 3, 3);
@@ -28,7 +28,7 @@ public class AboutLocale {
         assertEquals(dateformatJA.format(date), __);
     }
 
-    @Koan
+    @Test
     public void getCountryInformation() {
         Locale locBR = new Locale("pt", "BR");
         assertEquals(locBR.getDisplayCountry(), __);
@@ -40,7 +40,7 @@ public class AboutLocale {
         assertEquals(locCH.getDisplayCountry(new Locale("de", "CH")), __);
     }
 
-    @Koan
+    @Test
     public void formatCurrency() {
         float someAmount = 442.23f; // Don't use floats for money in real life. Really. It's a bad idea.
         Locale locBR = new Locale("pt", "BR");

@@ -1,19 +1,19 @@
 package java8;
 
-import com.sandwich.koan.Koan;
+import org.junit.jupiter.api.Test;
 
 import java.util.Base64;
 import java.io.UnsupportedEncodingException;
 
-import static com.sandwich.koan.constant.KoanConstants.__;
-import static com.sandwich.util.Assert.assertEquals;
+import static tools.Constants.__;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AboutBase64 {
 
     private final String plainText = "lorem ipsum";
     private final String encodedText = "bG9yZW0gaXBzdW0=";
 
-    @Koan
+    @Test
     public void base64Encoding() {
         try {
             // Encode the plainText
@@ -24,7 +24,7 @@ public class AboutBase64 {
         } catch (UnsupportedEncodingException ex) {}
     }
 
-    @Koan
+    @Test
     public void base64Decoding() {
         // Decode the Base64 encodedText
         // This uses the basic Base64 decoding scheme but there are corresponding

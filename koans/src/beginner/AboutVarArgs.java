@@ -1,9 +1,9 @@
 package beginner;
 
-import com.sandwich.koan.Koan;
+import org.junit.jupiter.api.Test;
 
-import static com.sandwich.koan.constant.KoanConstants.__;
-import static com.sandwich.util.Assert.assertEquals;
+import static tools.Constants.__;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AboutVarArgs {
 
@@ -27,23 +27,23 @@ public class AboutVarArgs {
         // public String otherInvalidMethodDeclaration(String... arguments, String otherArgument) { return ""; }
     }
 
-    @Koan
+    @Test
     public void varArgsCanBeTreatedAsArrays() {
         assertEquals(new ExampleClass().canBeTreatedAsArray(1, 2, 3), __);
     }
 
-    @Koan
+    @Test
     public void youCanPassInAsManyArgumentsAsYouLike() {
         assertEquals(new ExampleClass().getLength(1, 2, 3), __);
         assertEquals(new ExampleClass().getLength(1, 2, 3, 4, 5, 6, 7, 8), __);
     }
 
-    @Koan
+    @Test
     public void youCanPassInZeroArgumentsIfYouLike() {
         assertEquals(new ExampleClass().getLength(), __);
     }
 
-    @Koan
+    @Test
     public void youCanHaveOtherTypesInTheMethodSignature() {
         assertEquals(new ExampleClass().verboseLength("This is how many items were passed in: ", 1, 2, 3, 4), __); 
     }

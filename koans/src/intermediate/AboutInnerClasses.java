@@ -1,9 +1,9 @@
 package intermediate;
 
-import com.sandwich.koan.Koan;
+import org.junit.jupiter.api.Test;
 
-import static com.sandwich.koan.constant.KoanConstants.__;
-import static com.sandwich.util.Assert.assertEquals;
+import static tools.Constants.__;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AboutInnerClasses {
 
@@ -21,13 +21,13 @@ public class AboutInnerClasses {
         }
     }
 
-    @Koan
+    @Test
     public void creatingInnerClassInstance() {
         Inner someObject = new Inner();
         assertEquals(someObject.doStuff(), __);
     }
 
-    @Koan
+    @Test
     public void creatingInnerClassInstanceWithOtherSyntax() {
         AboutInnerClasses.Inner someObject = this.new Inner();
         assertEquals(someObject.doStuff(), __);
@@ -35,13 +35,13 @@ public class AboutInnerClasses {
 
     private int x = 10;
 
-    @Koan
+    @Test
     public void accessingOuterClassMembers() {
         Inner someObject = new Inner();
         assertEquals(someObject.returnOuter(), __);
     }
 
-    @Koan
+    @Test
     public void innerClassesInMethods() {
         class MethodInnerClass {
             int oneHundred() {
@@ -68,7 +68,7 @@ public class AboutInnerClasses {
         }
     }
 
-    @Koan
+    @Test
     public void innerClassesInMethodsThatEscape() {
         AnotherInnerClass ic = new AnotherInnerClass();
         assertEquals(ic.thousand(), __);
@@ -80,7 +80,7 @@ public class AboutInnerClasses {
         return 42;
     }
 
-    @Koan
+    @Test
     public void creatingAnonymousInnerClasses() {
         AboutInnerClasses anonymous = new AboutInnerClasses() {
             int theAnswer() {
@@ -90,7 +90,7 @@ public class AboutInnerClasses {
         assertEquals(anonymous.theAnswer(), __);
     }
 
-    @Koan
+    @Test
     public void creatingAnonymousInnerClassesToImplementInterface() {
         Ignoreable ignoreable = new Ignoreable() {
             public String ignoreAll() {
@@ -104,7 +104,7 @@ public class AboutInnerClasses {
         // an object of that type?
     }
 
-    @Koan
+    @Test
     public void innerClassAndInheritance() {
         Inner someObject = new Inner();
         // The statement below is obvious...
@@ -117,7 +117,7 @@ public class AboutInnerClasses {
     class OtherInner extends AboutInnerClasses {
     }
 
-    @Koan
+    @Test
     public void innerClassAndInheritanceOther() {
         OtherInner someObject = new OtherInner();
         // What do you expect here?
@@ -131,7 +131,7 @@ public class AboutInnerClasses {
         }
     }
 
-    @Koan
+    @Test
     public void staticInnerClass() {
         StaticInnerClass someObject = new StaticInnerClass();
         assertEquals(someObject.importantNumber(), __);
@@ -141,7 +141,7 @@ public class AboutInnerClasses {
         // Does it work? Why not?
     }
 
-    @Koan
+    @Test
     public void staticInnerClassFullyQualified() {
         AboutInnerClasses.StaticInnerClass someObject = new AboutInnerClasses.StaticInnerClass();
         assertEquals(someObject.importantNumber(), __);

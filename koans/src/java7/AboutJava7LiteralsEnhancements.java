@@ -1,27 +1,27 @@
 package java7;
 
-import com.sandwich.koan.Koan;
+import org.junit.jupiter.api.Test;
 
-import static com.sandwich.koan.constant.KoanConstants.__;
-import static com.sandwich.util.Assert.assertEquals;
+import static tools.Constants.__;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AboutJava7LiteralsEnhancements {
 
-    @Koan
+    @Test
     public void binaryLiterals() {
         //binary literals are marked with 0b prefix
         short binaryLiteral = 0b1111;
         assertEquals(binaryLiteral, __);
     }
 
-    @Koan
+    @Test
     public void binaryLiteralsWithUnderscores() {
         //literals can use underscores for improved readability
         short binaryLiteral = 0b1111_1111;
         assertEquals(binaryLiteral, __);
     }
 
-    @Koan
+    @Test
     public void numericLiteralsWithUnderscores() {
         long literal = 111_111_111L;
         //notice capital "B" - a valid binary literal prefix
@@ -29,13 +29,13 @@ public class AboutJava7LiteralsEnhancements {
         assertEquals(literal * multiplier, __);
     }
 
-    @Koan
+    @Test
     public void negativeBinaryLiteral() {
         int negativeBinaryLiteral = 0b1111_1111_1111_1111_1111_1111_1111_1100 / 4;
         assertEquals(negativeBinaryLiteral, __);
     }
 
-    @Koan
+    @Test
     public void binaryLiteralsWithBitwiseOperator() {
         int binaryLiteral = ~0b1111_1111;
         assertEquals(binaryLiteral, __);

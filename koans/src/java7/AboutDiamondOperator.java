@@ -1,34 +1,33 @@
 package java7;
 
-import com.sandwich.koan.Koan;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static com.sandwich.koan.constant.KoanConstants.__;
-import static com.sandwich.util.Assert.assertEquals;
+import static tools.Constants.__;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AboutDiamondOperator {
 
-    @Koan
+    private String[] animals = new String[] {"Dog", "Cat", "Tiger", "Elephant", "Zebra"};;
+
+	@Test
     public void diamondOperator() {
-        String[] animals = {"Dog", "Cat", "Tiger", "Elephant", "Zebra"};
         //Generic type of array list inferred - empty <> operator
         List<String> animalsList = new ArrayList<>(Arrays.asList(animals));
         assertEquals(animalsList, __);
     }
 
-    @Koan
+    @Test
     public void diamondOperatorInMethodCall() {
-        String[] animals = {"Dog", "Cat", "Tiger", "Elephant", "Zebra"};
         //type of new ArrayList<>() inferred from method parameter
         List<String> animalsList = fill(new ArrayList<>());
         assertEquals(animalsList, __);
     }
 
     private List<String> fill(List<String> list) {
-        String[] animals = {"Dog", "Cat", "Tiger", "Elephant", "Zebra"};
         list.addAll(Arrays.asList(animals));
         return list;
     }

@@ -1,16 +1,16 @@
 package intermediate;
 
-import com.sandwich.koan.Koan;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.Comparator;
 
-import static com.sandwich.koan.constant.KoanConstants.__;
-import static com.sandwich.util.Assert.assertEquals;
+import static tools.Constants.__;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AboutComparison {
 
-    @Koan
+    @Test
     public void compareObjects() {
         String a = "abc";
         String b = "bcd";
@@ -30,7 +30,7 @@ public class AboutComparison {
 
     }
 
-    @Koan
+    @Test
     public void makeObjectsComparable() {
         Car vwbeetle = new Car();
         vwbeetle.horsepower = 50;
@@ -61,7 +61,7 @@ public class AboutComparison {
         }
     }
 
-    @Koan
+    @Test
     public void makeObjectsComparableWithoutComparable() {
         RaceHorse lindy = new RaceHorse();
         lindy.age = 10;

@@ -1,10 +1,10 @@
 package beginner;
 
 
-import com.sandwich.koan.Koan;
+import org.junit.jupiter.api.Test;
 
-import static com.sandwich.koan.constant.KoanConstants.__;
-import static com.sandwich.util.Assert.assertEquals;
+import static tools.Constants.__;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AboutConstructors {
 
@@ -24,7 +24,7 @@ public class AboutConstructors {
 
     }
 
-    @Koan
+    @Test
     public void simpleConstructorOrder() {
         assertEquals(new B().someString, __);
     }
@@ -49,7 +49,7 @@ public class AboutConstructors {
 
     }
 
-    @Koan
+    @Test
     public void complexConstructorOrder() {
         assertEquals(new Bb().someString, __);
     }

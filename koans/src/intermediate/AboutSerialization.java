@@ -1,17 +1,17 @@
 package intermediate;
 
-import com.sandwich.koan.Koan;
+import org.junit.jupiter.api.Test;
 
 import java.io.*;
 import java.util.logging.Logger;
 
-import static com.sandwich.koan.constant.KoanConstants.__;
-import static com.sandwich.util.Assert.assertEquals;
+import static tools.Constants.__;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class AboutSerialization {
 
-    @Koan
+    @Test
     public void simpleSerialization() throws FileNotFoundException, IOException, ClassNotFoundException {
         String s = "Hello world";
         // serialize
@@ -41,7 +41,7 @@ public class AboutSerialization {
         int maxWarpSpeed;
     }
 
-    @Koan
+    @Test
     public void customObjectSerialization() throws IOException, ClassNotFoundException {
         Starship s = new Starship();
         s.maxWarpSpeed = 9;
@@ -88,7 +88,7 @@ public class AboutSerialization {
         }
     }
 
-    @Koan
+    @Test
     public void customObjectSerializationWithTransientFields() throws FileNotFoundException, IOException, ClassNotFoundException {
         // Note that this kind of access of fields is not good OO practice.
         // But let's focus on serialization here :)
@@ -115,7 +115,7 @@ public class AboutSerialization {
         Engine engine;
     }
 
-    @Koan
+    @Test
     public void customSerializationWithUnserializableFields() throws FileNotFoundException, IOException {
         Boat boat = new Boat();
         boat.engine = new Engine("diesel");
@@ -148,7 +148,7 @@ public class AboutSerialization {
         }
     }
 
-    @Koan
+    @Test
     public void serializeWithInheritance() throws IOException, ClassNotFoundException {
         Dog d = new Dog("snoopy");
         File file = new File("SerializeFile");
@@ -186,7 +186,7 @@ public class AboutSerialization {
         }
     }
 
-    @Koan
+    @Test
     public void serializeWithInheritanceWhenParentNotSerializable() throws FileNotFoundException, IOException, ClassNotFoundException {
         MilitaryPlane p = new MilitaryPlane("F22");
 

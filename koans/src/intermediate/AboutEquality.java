@@ -1,35 +1,40 @@
 package intermediate;
 
-import com.sandwich.koan.Koan;
+import org.junit.jupiter.api.Test;
 
-import static com.sandwich.koan.constant.KoanConstants.__;
-import static com.sandwich.util.Assert.assertEquals;
+import static tools.Constants.__;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 public class AboutEquality {
-    // This suite of Koans expands on the concepts introduced in beginner.AboutEquality
+    private static final String REMOVE_THIS_LINE = "Remove this after you've implemented Car.equals";
 
-    @Koan
+	// This suite of Koans expands on the concepts introduced in beginner.AboutEquality
+
+    @Test
     public void sameObject() {
         Object a = new Object();
         Object b = a;
         assertEquals(a == b, __);
     }
 
-    @Koan
+    @Test
     public void equalObject() {
-        Integer a = new Integer(1);
-        Integer b = new Integer(1);
+        Integer a = Integer.valueOf(1);
+        Integer b = Integer.valueOf(1);
         assertEquals(a.equals(b), __);
         assertEquals(b.equals(a), __);
     }
 
-    @Koan
+    @Test
     public void noObjectShouldBeEqualToNull() {
         assertEquals(new Object().equals(null), __);
     }
 
     static class Car {
-        private String name = "";
+        @SuppressWarnings("unused")
+		private String name = "";
+        @SuppressWarnings("unused")
         private int horsepower = 0;
 
         public Car(String s, int p) {
@@ -52,7 +57,7 @@ public class AboutEquality {
         }
     }
 
-    @Koan
+    @Test
     public void equalForOwnObjects() {
         Car car1 = new Car("Beetle", 50);
         Car car2 = new Car("Beetle", 50);
@@ -61,30 +66,33 @@ public class AboutEquality {
         assertEquals(car2.equals(car1), true);
     }
 
-    @Koan
+    @Test
     public void unequalForOwnObjects() {
         Car car1 = new Car("Beetle", 50);
         Car car2 = new Car("Porsche", 300);
         // @see Car.equals (around line 45) for the place to solve this
+        fail(REMOVE_THIS_LINE);
         assertEquals(car1.equals(car2), false);
     }
 
-    @Koan
+    @Test
     public void unequalForOwnObjectsWithDifferentType() {
         Car car1 = new Car("Beetle", 50);
         String s = "foo";
         // @see Car.equals (around line 45) for the place to solve this
+        fail(REMOVE_THIS_LINE);
         assertEquals(car1.equals(s), false);
     }
 
-    @Koan
+    @Test
     public void equalNullForOwnObjects() {
         Car car1 = new Car("Beetle", 50);
         // @see Car.equals (around line 45) for the place to solve this
+        fail(REMOVE_THIS_LINE);
         assertEquals(car1.equals(null), false);
     }
 
-    @Koan
+    @Test
     public void ownHashCode() {
         // As a general rule: When you override equals you should override
         // hash code
@@ -114,7 +122,7 @@ public class AboutEquality {
         }
     }
 
-    @Koan
+    @Test
     public void ownHashCodeImplementationPartTwo() {
         Chicken chicken1 = new Chicken();
         chicken1.color = "black";

@@ -1,21 +1,38 @@
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'eclipse'
+apply plugin: 'application'
 
-repositories {
-   flatDir {
-       dirs 'app/lib'
-   }
-}
+repositories { jcenter() }
 
 sourceSets {
-    main {
-        java {
-            srcDir 'src'
-        }
-    }
+    test {
+    	java {
+      		srcDir 'test'
+    	}
+  	}
+  	
+  	main {
+  		java {
+  			srcDir 'src'
+  		}
+  	}
+}
+
+application {
+	mainClassName = 'main.App'
+	
+}
+
+test {
+    useJUnitPlatform()
 }
 
 dependencies {
-   compile name: 'koans'
+   testCompile 'org.junit.jupiter:junit-jupiter-api:5.3.1'
+   testCompile 'org.mockito:mockito-core:2.1.0'
+   testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
+   compile 'org.junit.platform:junit-platform-launcher:1.4.2'
+   compile 'org.junit.jupiter:junit-jupiter-api:5.3.1'
+   compile 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
 }
